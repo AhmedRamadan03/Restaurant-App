@@ -3,6 +3,7 @@
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\FoodController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\ResrvationController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -34,7 +35,9 @@ Route::get('foods-edit/{id}' , [FoodController::class,'edit'])->name('foods-edit
 Route::post('foods-update/{id}' , [FoodController::class,'update'])->name('foods-update.update');
 Route::get('foods-destroy/{id}' , [FoodController::class,'destroy'])->name('foods-destroy.destroy');
 
-
+////////// reservation roure///////////////////
+Route::get('reservations',[ResrvationController::class,'index']);
+Route::post('reservations-store',[ResrvationController::class,'store'])->name('eservations-store.store');
 
 Route::get('/redirects',[HomeController::class,'redirects']);
 

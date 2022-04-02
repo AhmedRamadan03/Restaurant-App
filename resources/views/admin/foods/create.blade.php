@@ -59,7 +59,7 @@
                   </div>
                   <div class="col-md-8">
                     <label for="">description *</label>
-                    <textarea class="form-control" name="description" id=""  placeholder="enter yor description..."></textarea>
+                    <textarea class="form-control" name="description" id="message" rows="5" placeholder="enter yor description..."></textarea>
                   </div>
                 </div>
                 <div class="row pt-3">

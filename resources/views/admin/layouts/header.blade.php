@@ -1,4 +1,4 @@
-<x-app-layout></x-app-layout>
+<x-app-layout ></x-app-layout>
 
  <!DOCTYPE html>
  <html lang="en">
@@ -25,12 +25,22 @@
     <!-- End layout styles -->
     <link rel="shortcut icon" href="{{ url('/admin/assets/images/favicon.png') }}" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <style>
-    .sidebar {
-    background: #ffffff;
+<style>
+.sidebar {
+    background: #fffafa;
     box-shadow: 0 0 25px -10px black;
 }
-
+.sidebar .nav .nav-item > .nav-link{
+  margin-top: 10px;
+}
+.sidebar .nav .nav-item.active > .nav-link{
+    background: #a19696ad;
+    position: relative;
+}
+.sidebar .nav:not(.sub-menu) > .nav-item:hover:not(.nav-category):not(.account-dropdown) > .nav-link {
+    background: #bfb5b5;
+    margin-top: 10px
+}
 
     .bg-contant{
       background: whitesmoke;
@@ -41,9 +51,9 @@
     border-radius: 20px;
   }
   
-  th{font-weight: bolder !important;}
+  th{font-weight: bolder !important; }
   .form-control, .form-control:focus {
-    color: black;
+    color: black !important;
     background: #fff;
     border: none;
     border-radius: 15px;
