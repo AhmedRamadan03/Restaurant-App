@@ -3,12 +3,20 @@
 namespace App\Http\Controllers;
 
 use App\Models\Resrvation;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 
 class ResrvationController extends Controller
 {
     public function index(){
-        $data = Resrvation::paginate(5);
+        //dd( request()->start_date);
+        $query = Resrvation::latest()->limit(15);
+        if(request()->start_date &&  request()->end_date){
+            // dd( request()->start_date);
+            $query->whereBetween('date',[request()->start_date,request()->end_date]);
+        }
+        $data = $query->get();    
+        //dd($data);   
         return view('admin.reservations.index',compact('data'));
     }
 
@@ -22,7 +30,7 @@ class ResrvationController extends Controller
             "time" => $request->time,
             "message" => $request->message,
         ]);
-        session()->flush('done');
+        session()->flash('done');
         return back();
     }
 }

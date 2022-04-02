@@ -1,20 +1,12 @@
-{{-- <style>
-    div.alert{
-        position: relative;
-        top: 0px;
-        right: 0px;
-        width: 200px;
-    }
-</style> --}}
 
 
 @if ($message = Session::get('done'))
-    <div class="alert alert-success alert-dismissible fade show" role="alert">
-        <strong>Success</strong>
-            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-            </button>
-    </div>
+<div class="alert alert-success alert-dismissible fade show" role="alert">
+    <strong>Reservation Done Success</strong>
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+</div>
 @endif
 
 <div class="contact-form">
@@ -47,7 +39,7 @@
         <div class="col-lg-6">
             <div id="filterDate2">    
               {{-- <div class="input-group date" data-date-format="dd/mm/yyyy"> --}}
-                <input  name="date" id="date" type="date" class="form-control" required placeholder="dd/mm/yyyy">
+                <input  name="date" id="" type="date" class="form-control" required placeholder="dd/mm/yyyy">
                 {{-- <div class="input-group-addon" >
                   <span class="glyphicon glyphicon-th"></span>
                 </div> --}}
@@ -73,9 +65,3 @@
     </form>
 </div>
 
-<script>
-    setTimeout(function() 
-    {
-      $('.alert').fadeOut('.5');
-    }, 2000);
-</script>

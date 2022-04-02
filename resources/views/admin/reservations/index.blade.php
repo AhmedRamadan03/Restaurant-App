@@ -17,7 +17,7 @@
       @include('admin.layouts.navbar')
      
       <div class="row container pt-5 bg-contant">
-        
+       @include('admin.reservations.filter')
         <div class="col-md-12 ">
           <div class="card bg-card mb-5">
             <div class="card-body">
@@ -31,13 +31,13 @@
                 </div>
                 @endif
                 <div class="col-sm-4">
-                  <h4 class="card-title">Foods</h4>
+                  <h4 class=" badge bg-secondary"> Reservations </h4>
                 </div>
                 <div class="col-sm-4 text-right">
                   
                 </div>
                 <div class="col-sm-4 text-right">
-                    <a href="{{ route('foods-create.create') }}" class="btn btn-primary"><i class="fa fa-plus"></i>New</a>
+                    {{-- <a href="{{ route('foods-create.create') }}" class="btn btn-primary"><i class="fa fa-plus"></i>New</a> --}}
                 </div>
               </div>
               
@@ -45,7 +45,7 @@
               <div class="table-responsive" style="color: #fff">
                 <table class="table mb-5">
                   <thead>
-                    <tr>
+                    <tr class=" bg-light ">
                       <th> # </th>
                       <th> Name </th>
                       <th> Email </th>
@@ -56,25 +56,33 @@
                     </tr>
                   </thead>
                   <tbody>
-                  @if ($data)
+                   @if ($data)
+                     
                       @foreach ($data as $item)
-                        <tr>
-                        <td>{{ $loop->iteration }}</td>
-                        <td>{{ $item->name }}</td>
-                        <td> {{ $item->email }} </td>
-                        <td> {{ $item->phone }} </td>
-                        <td> {{ $item->time }} </td>
-                        <td> {{ $item->date }} </td>
-                        <td> {{ $item->number_guests }} </td>
-                    
-                        </tr>
-                      @endforeach
-                  @endif
-                
+                      <tr>
+                      <td>{{ $loop->iteration }}</td>
+                      <td>{{ $item->name }}</td>
+                      <td> {{ $item->email }} </td>
+                      <td> {{ $item->phone }} </td>
+                      <td> 
+                          @if ($item->time == 'Breakfast')
+                            <span class="badge bg-primary">{{ $item->time }} </span>
+                          @elseif($item->time == 'Lunch')
+                          <span class="badge bg-info">{{ $item->time }} </span>
+                          @else
+                          <span class="badge bg-warning ">{{ $item->time }} </span>
+                          @endif
+                      </td>
+                      <td> {{ $item->date }} </td>
+                      <td> <span class="badge bg-success">{{ $item->number_guests }}</span> </td>
+                      </tr>
+                    @endforeach
+           
+                   @endif
                   </tbody>
                 </table>
-               <div style="color: #fff !importan ">
-                {{ $data->links() }}</div>
+               {{-- <div style="color: #fff !importan ">
+                {{ $data->links() }}</div> --}}
               </div>
             </div>
           </div>

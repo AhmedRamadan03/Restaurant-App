@@ -25,6 +25,8 @@ Route::get('/',[HomeController::class,'index']);
 
 // users Routes
 Route::get('users',[AdminController::class,'viewUsers'])->name('users.viewUsers');
+Route::get('users/create',[AdminController::class,'create']);
+Route::post('users/store',[AdminController::class,'store']);
 Route::get('users-destroy/{id}',[AdminController::class,'deleteUser'])->name('users-destroy.deleteUser');
 
 //routes of foods

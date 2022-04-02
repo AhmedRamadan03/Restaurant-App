@@ -13,6 +13,23 @@ class AdminController extends Controller
         return view('admin.users.index',compact('users'));
     }
 
+    public function create(){
+        $type_user=[
+            "0" => "user",
+            "1" => "admin",
+        ];
+        return view('admin.users.create',compact('type_user'));
+    }
+
+    public function store(Request $request){
+        $request->validate([
+            'name' => 'required',
+            'email' => 'required|unique:users',
+            'password' => 'required|confirmed',
+            'type_user' => 'required|min:1'
+        ]);
+    }
+
     public function deleteUser ($id){
         User::find($id)->delete();
         session()->flash('done');

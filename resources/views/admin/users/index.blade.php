@@ -19,7 +19,13 @@
             <div class="card-body">
               <div class="row">
                 <div class="col-sm-4">
-                  <h4 class="card-title">Users</h4>
+                  <h4 class="badge bg-secondary">Users</h4>
+                </div>
+                <div class="col-sm-4">
+                  
+                </div>
+                <div class="col-sm-4 text-right">
+                  <a href="{{ url('users/create') }}" class="btn btn-primary"><i class="fa fa-plus"></i> New</a>
                 </div>
                
                 <div class="col-sm-8 text-right">
