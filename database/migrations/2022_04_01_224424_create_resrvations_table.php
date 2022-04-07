@@ -21,7 +21,7 @@ class CreateResrvationsTable extends Migration
             $table->string('number_guests');
             $table->date('date');
             $table->string('time');
-            $table->text('message');
+            $table->text('message')->nullable();
             $table->timestamps();
         });
     }
