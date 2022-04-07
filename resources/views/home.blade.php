@@ -110,7 +110,7 @@
     <!-- ***** Menu Area Starts ***** -->
     
 
-   @include('admin.foods.menu')
+     @include('admin.foods.menu')
     <!-- ***** Menu Area Ends ***** -->
 
     <!-- ***** Chefs Area Starts ***** -->

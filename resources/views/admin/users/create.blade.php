@@ -18,6 +18,7 @@
     <div class="row container pt-5 bg-contant">
       
       <div class="col-md-12 ">
+        
         <div class="card bg-card">
           <div class="card-body">
             <div class="row">
@@ -35,7 +36,6 @@
               </div>
               @if (count($errors) > 0)
                         <div class="alert alert-danger">
-                            <strong>خطأ!</strong> توجد بعض الأخطاء في عمليه الادخال.<br><br>
                             <ul>
                                 @foreach ($errors->all() as $error)
                                     <li>{{ $error }}</li>
@@ -54,24 +54,27 @@
                   </div>
                   <div class="col-md-6">
                     <label for="">email *</label>
-                    <input type="email" name="email" class="form-control" placeholder="enter your eamin..." required>
+                    <input type="email" name="email" class="form-control" placeholder="enter your eamin..." required autocomplete="off">
                   </div>
                 </div>
                 <div class="row pt-3">
                   <div class="col-md-6">
-                    <label for="">Password</label>
-                    <input type="password" name="password" class="form-control"  required>
+                    <label for="">Password * </label>
+                    <input type="password" name="password" class="form-control" placeholder="enter your password"  required>
                   </div>
                   <div class="col-md-6">
+                    <label for="">User Type * </label>
+
+                      {!! Form::select("type_user", $type_user, request()->type_user, ["class"=>"form-select form-control", "placeholder"=>"Select User Type" ,'required']) !!}
+                    </div>
+                 </div>
+                  {{-- <div class="col-md-6">
                     <label for="">Confirm Password *</label>
-                    <input type="password" name="confirm_password" class="form-control" id="">
-                  </div>
+                    <input type="password" name="confirm_password" placeholder="confirm password" class="form-control" id="">
+                  </div> --}}
                 </div>
                 <div class="row pt-3">
-                    <div class="col-md-6">
-                        {!! Form::select("type_user", $type_user, request()->type_user, ["class"=>"form-select form-control", "placeholder"=>"Select User Type"]) !!}
-                      </div>
-                </div>
+                   
                 <div class="row pt-3">
                   <div class="col-md-12">
                     <input type="submit" value="Save" class="btn btn-primary">
@@ -94,6 +97,11 @@
     @include('admin.layouts.footer_script')
 
     <script>
+      setTimeout(function() 
+      {
+        $('.alert-danger').fadeOut('.5');
+      }, 2000);
+
       setTimeout(function() 
       {
         $('.alert-success').fadeOut('.5');

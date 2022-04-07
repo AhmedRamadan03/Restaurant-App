@@ -22,12 +22,21 @@ class AdminController extends Controller
     }
 
     public function store(Request $request){
+        //dd($request->all());
         $request->validate([
             'name' => 'required',
             'email' => 'required|unique:users',
-            'password' => 'required|confirmed',
-            'type_user' => 'required|min:1'
+            'password' => 'required',
+            'type_user' => 'required|min:1',
         ]);
+        User::create([
+            "name" => $request->name,
+            "email" => $request->email,
+            "password" => bcrypt($request->password),
+            "type_user" => $request->type_user,
+        ]);
+        session()->flash('done');
+        return back();
     }
 
     public function deleteUser ($id){

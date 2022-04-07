@@ -59,5 +59,16 @@
     border-radius: 15px;
     box-shadow: 0 0 4px -1px black;
 }
+
+div.alert{
+          position: fixed;
+        top: 10px;
+        right: 10px;
+        z-index: 55;
+        width: auto;
+        height: auto;
+        
+      }
+
   </style>
   </head>

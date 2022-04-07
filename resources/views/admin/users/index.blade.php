@@ -13,7 +13,14 @@
       @include('admin.layouts.navbar')
      
       <div class="row container pt-5 bg-contant">
-        
+        @if ($message = Session::get('done'))
+              <div class="alert alert-success alert-dismissible fade show" role="alert">
+                <strong>Success</strong>
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              @endif
         <div class="col-md-12 ">
           <div class="card bg-card">
             <div class="card-body">
@@ -29,9 +36,7 @@
                 </div>
                
                 <div class="col-sm-8 text-right">
-                  @if ($message = Session::get('done'))
-                    <span style="height: 1.9cm" class="alert alert-success"> Users Deletet</span>
-                  @endif
+                 
                 </div>
               </div>
               
@@ -70,5 +75,11 @@
 
       {{-- js_files --}}
     @include('admin.layouts.footer_script')
+    <script>
+      setTimeout(function() 
+      {
+        $('.alert-success').fadeOut('.5');
+      }, 2000);
+    </script>
    </body>
  </html>
