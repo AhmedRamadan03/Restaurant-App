@@ -33,7 +33,7 @@
         </div>
         <div class="col-md-6 col-sm-12">
           <fieldset>
-              {!! Form::select('number_guests', $gest_num, request()->number_guests, ["class"=>"form-select", "placeholder"=>"Select Number Of Guests","required"]) !!}
+            <input type="number" name="number_guests" class="form-control" id="" required>
           </fieldset>
         </div>
         <div class="col-lg-6">
@@ -48,7 +48,7 @@
         </div>
         <div class="col-md-6 col-sm-12">
           <fieldset>
-              {!! Form::select("time", $time, request()->time, ["class" => "form-select","placeholder"=>"Select Time","required"]) !!}
+            <input type="time" name="time" class="form-control" id="" required>
           </fieldset>
         </div>
         <div class="col-lg-12">
