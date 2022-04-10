@@ -40,11 +40,11 @@ Route::get('foods-destroy/{id}' , [FoodController::class,'destroy'])->name('food
 
 //routes of chefs
 Route::get('chefs',[ChefController::class,'index']);
-Route::get('chefs/chefs-create' , [FoodController::class,'create'])->name('chefs/chefs-create.create');
-Route::post('chefs/chefs-store' , [FoodController::class,'store'])->name('chefs/chefs-store.store');
-Route::get('chefs/chefs-edit/{id}' , [FoodController::class,'edit'])->name('chefs/chefs-edit.edit');
-Route::post('chefs/chefs-update/{id}' , [FoodController::class,'update'])->name('chefs/chefs-update.update');
-Route::get('chefs/chefs-destroy/{id}' , [FoodController::class,'destroy'])->name('chefs/chefs-destroy.destroy');
+Route::get('chefs/chefs-create' , [ChefController::class,'create'])->name('chefs/chefs-create.create');
+Route::post('chefs/chefs-store' , [ChefController::class,'store'])->name('chefs/chefs-store.store');
+Route::get('chefs/chefs-edit/{id}' , [ChefController::class,'edit'])->name('chefs/chefs-edit.edit');
+Route::post('chefs/chefs-update/{id}' , [ChefController::class,'update'])->name('chefs/chefs-update.update');
+Route::get('chefs/chefs-destroy/{id}' , [ChefController::class,'destroy'])->name('chefs/chefs-destroy.destroy');
 
 ////////// reservation roure///////////////////
 Route::get('reservations',[ResrvationController::class,'index']);

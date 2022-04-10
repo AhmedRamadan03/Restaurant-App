@@ -58,12 +58,12 @@
                       @foreach ($data as $item)
                         <tr>
                         <td>{{ $loop->iteration }}</td>
-                        <td>image</td>
+                        <td>{{ $item->image_path }}</td>
                         <td> {{ $item->name }} </td>
                         <td> {{ $item->description }} </td>
                         <td>
-                          <a href="{{ route('chefs-edit.edit',$item->id) }}" class="btn btn-info"title="edit">  <i class="fa fa-edit"></i></a>
-                          <a href="{{ route('chefs-destroy.destroy',$item->id) }}" class="btn btn-danger"title="delete">  <i class="fa fa-trash"></i></a>
+                          <a href="{{ route('chefs/chefs-edit.edit',$item->id) }}" class="btn btn-info"title="edit">  <i class="fa fa-edit"></i></a>
+                          <a href="{{ route('chefs/chefs-destroy.destroy',$item->id) }}" class="btn btn-danger"title="delete">  <i class="fa fa-trash"></i></a>
                         </td>
                         </tr>
                       @endforeach

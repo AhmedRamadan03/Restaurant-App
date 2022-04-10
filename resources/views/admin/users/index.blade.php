@@ -42,7 +42,7 @@
               
               
               <div class="table-responsive">
-                <table class="table">
+                <table class="table mb-4">
                   <thead>
                     <tr>
                       <th> # </th>
@@ -64,6 +64,7 @@
                    @endforeach
                   </tbody>
                 </table>
+                {{ $users->links() }}
               </div>
             </div>
           </div>

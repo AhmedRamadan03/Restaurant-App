@@ -17,9 +17,9 @@
    
     <div class="row container pt-5 bg-contant">
       
-      <div class="col-md-12 ">
-        <div class="card bg-card">
-          <div class="card-body">
+      <div class="col-md-12 m-auto ">
+        <div class="card bg-card  ">
+          <div class="card-body ">
             <div class="row">
               @if ($message = Session::get('done'))
               <div class="alert alert-success alert-dismissible fade show" role="alert">
@@ -42,18 +42,17 @@
             <div>
               <form action="{{ route('chefs/chefs-store.store') }}" method="post" enctype="multipart/form-data">
                @csrf
+                
                 <div class="row pt-3">
-                  <div class="col-md-6">
+                  <div class="col-md-12 pt-3">
                     <label for="">name *</label>
                     <input type="text" name="name" class="form-control" placeholder="enter chef name..." required>
                   </div>
-                </div>
-                <div class="row pt-3">
-                  <div class="col-md-4">
+                  <div class="col-md-12 pt-3">
                     <label for="">image *</label>
                     <input type="file" name="image" class="form-control"  required>
                   </div>
-                  <div class="col-md-8">
+                  <div class="col-md-12 pt-3">
                     <label for="">description *</label>
                     <input type="text" class="form-control" name="description" placeholder="enter description about chefs">
                   </div>

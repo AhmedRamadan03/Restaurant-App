@@ -13,4 +13,10 @@ class Chef extends Model
         'image',
         "description"
     ];
+
+    protected $appends = ['image_path']; 
+
+    public function getImagePathAttribute(){
+        return asset('uploads/foods_images/' .$this->image);
+    }
 }
